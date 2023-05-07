@@ -2432,7 +2432,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             extclas.setAttr_extends_ClassStateLess_with_float(visitExtends_ClassStateLess_with_float(ctx.extends_ClassStateLess_with_float()));
             extclas.setLinenum(ctx.start.getLine());
             extclas.setChildrennum(ctx.getChildCount());
-            generator.html_code_generation("floating","");
+//            generator.html_code_generation("floating","");
 
 
         }
@@ -3026,7 +3026,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         hw.setNumline(ctx.start.getLine());
         hw.setChildrenCount(ctx.getChildCount());
         createSymbolRow("SizedBox ",hw.getType().toString(),hw.getNUM_FLOAT().toString(),ctx.start.getLine());
-//        generator.html_code_generation("SizedBox" , "");
+        generator.html_code_generation("SizedBox" , "");
 
         return  hw;
     }
@@ -3729,7 +3729,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             flutterWidget.setFloatactionbutton(visitFloatactionbutton(ctx.floatactionbutton()));
             flutterWidget.setNumline(ctx.start.getLine());
             flutterWidget.setChildrenCount(ctx.getChildCount());
-            generator.html_code_generation("builder","");
+//            generator.html_code_generation("builder","");
         }
         if(ctx.fLOATING_name() != null){
             flutterWidget.setfLOATINGName(visitFLOATING_name(ctx.fLOATING_name()));
@@ -4686,6 +4686,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         extends_ClassStateLess_with_float.setN(visitNamen(ctx.namen(1)));
         generator.html_code_generation("ResetEvent","");
         generator.html_code_generation("IncreamentEvent","");
+        generator.html_code_generation("floating","");
 
 
 

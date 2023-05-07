@@ -48,9 +48,9 @@ public class Generator {
             FileWriter fWriter = new FileWriter(
                     "C:\\xampp\\htdocs\\test.txt");
 
-            // fWriter.write(content);
+//             fWriter.write(content);
             System.out.println(content);
-            //  fWriter.close();
+//              fWriter.close();
 
 //            System.out.println(
 //                    "File is created successfully with the content.................................................................");
@@ -210,7 +210,8 @@ public class Generator {
                 break;
 
             case "builder" :
-                type = "plus.addEventListener(\"click\" , ()=> {\n" +
+                type =  " <script>\n" +
+                        "plus.addEventListener(\"click\" , ()=> {\n" +
                         "    a++;\n" +
                         "\n" +
                         "    num.innerText = a;\n" +
