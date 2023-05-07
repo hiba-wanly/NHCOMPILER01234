@@ -95,7 +95,7 @@ public class Generator {
             case "Padding":
                 type = "  <div class = "+obj+">\n" +
                         "  <form action= \"page2.php\" method=\"post\">"
-                +"</div>"
+                        +"</div>"
                 ;
                 break;
 
@@ -116,7 +116,7 @@ public class Generator {
 
                 if (obj.equals("$name"))
                 { type = "      Hello <?php echo $_POST[\"name\"];?> ! <br/>\n" +
-                         "      Name : <?php echo $_POST[\"name\"];?> ! <br/> ";
+                        "      Name : <?php echo $_POST[\"name\"];?> ! <br/> ";
                     break;}
 
                 if (obj.equals("$email"))
@@ -130,27 +130,6 @@ public class Generator {
 
                 break;
 
-//            case "Text(\"Enter":
-//                if(obj.equals("Enter name")){
-//                    type = "    <p>   name:  </p> </br>\n"  ;
-//                    break;
-//                  }
-//                if(obj.equals("Enter email")){
-//                    type = "    <p>   email: <input type=\"text\" name=\"email\">  </p> </br>\n";
-//                    break;
-//                }
-//                if(obj.equals("Enter age")){
-//                    type = "    <p>   age: <input type=\"number\" name=\"age\">  </p> </br>\n";
-//                    break;
-//                }
-//                if(obj.equals("Enter phone")){
-//                    type = "    <p>   phone: <input type=\"number\" name=\"phone\">  </p> </br>\n";
-//                    break;
-//                }
-//                else {
-//                    type = "end";
-//                    break;
-//                }
             case "TextFormField":
                 if(obj.equals("name")){
                     type = "    <p>   name: <input type=\"text\" name=\"name\">  </p> </br>\n";
@@ -178,16 +157,6 @@ public class Generator {
                 type = " <input type=\"submit\" value=\"submit\" name = \"It's True .. Get Started\"> ";
                 break;
 
-
-//            case "TextEditingController":
-//                type = "" +
-//                        "        <?php\n" +
-//                        "\n" +
-//                        "\n" +
-//                        "        ?>"
-//                ;
-//                break;
-
             case "MaterialPageRoute":
                 type = " <?php"+
                         " if(isset ($_POST['submit'])){\n" +
@@ -211,17 +180,14 @@ public class Generator {
                 type =  "<br>";
                 break;
 
-            case "BlocBuilder":
-                type = "<div class = \"BlocBuilder\" >" ;
-                break;
-
-            case "ButtonsWidget":
-                type ="<div class = \"floating\">" ;
+            case "floating":
+                type = "<div class = floating > \n" +
+                        "<div class = \"BlocBuilder\" >" ;
                 break;
 
             case "ResetEvent":
                 type = "  <span class =\"minus\"> - </span>\n" +
-                       "  <span class =\"num\"> 01 </span>";
+                        "  <span class =\"num\"> 01 </span>";
                 break;
 
             case "IncreamentEvent":
@@ -259,7 +225,19 @@ public class Generator {
                         "})\n" +
                         "\n" +
                         "      </script>\n"
-                        ;
+                ;
+                break;
+
+
+            case "state":
+                type = "<div class = \"state\" >\n" +
+                        "\n" +
+                        "      <span class =\"minus\"> - </span>\n" +
+                        "      <span class =\"num\"> 01 </span>\n" +
+                        "      <span class =\"plus\"> + </span>\n" +
+                        "\n" +
+                        "</div>"
+                ;
                 break;
 
             case "incrementcount":
@@ -290,63 +268,14 @@ public class Generator {
                         "})\n" +
                         "\n" +
                         "      </script>"
-                        ;
+                ;
                 break;
 
 
-//            case "Text":
-//                type =  name ;
-//                break;
-//            case "start sign_in":
-//                type =  "\t<form ";
-//                break;
-//            case "end sign_in":
-//                type = space + "action = \"" + name + ".php\" method=\"POST\">\n" +
-//                        "\t\t<h1>Sign In</h1>\n" +
-//                        "\t\tUsername<br>\n" +
-//                        "\t\t<input type=\"text\" name=\"username\"><br><br>\n" +
-//                        "\t\tPassword<br>\n" +
-//                        "\t\t<input type=\"password\" name=\"Password\"><br><br>\n" +
-//                        "\t\t<input type=\"submit\" value=\"Login\">\n" +
-//                        "\t</form>\n";
-//                break;
-//            case "start string":
-//                type = space + "<p";
-//                break;
-//            case "end string":
-//                type = space + ">" + name.substring(1, name.length() - 1) + "</p>";
-//                break;
-//            default:
-//                type = space + "></input>";
-//                break;
         }
         return type;
     }
 
-
-
-//    public void generate(SymbolTable symbolTable){
-//
-//        PrintWriter printWriter;
-//        this.Footer = footerCode();
-//    }
-//
-//    public SymbolTable getSymbolTable() {
-//        return symbolTable;
-//    }
-//
-//    public void setSymbolTable(SymbolTable symbolTable) {
-//        this.symbolTable = symbolTable;
-//    }
-//
-//    public String footerCode(){
-//       return this.Footer = "<footer>\n" + "" +
-//               "        \n" +
-//               "<h3> The End Compile project </h3>" +
-//               "        \n" +
-//               "           </footer>";
-//
-//    }
 }
 
 

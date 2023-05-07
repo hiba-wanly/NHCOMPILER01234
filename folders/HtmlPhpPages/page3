@@ -17,16 +17,14 @@
     </style>
 </head>
 
-<div class = "BlocBuilder" >
-      <div class = "floating">
+
+<div class = "state" >
 
       <span class ="minus"> - </span>
       <span class ="num"> 01 </span>
       <span class ="plus"> + </span>
 
-      </div>
 </div>
-
       <script>
 
 const plus =document.querySelector(".plus"),

@@ -18,12 +18,15 @@
 </head>
 
 
-
+  <div class = "floating">
+<div class = "BlocBuilder" >
 
       <span class ="minus"> - </span>
       <span class ="num"> 01 </span>
       <span class ="plus"> + </span>
 
+      </div>
+</div>
 
       <script>
 

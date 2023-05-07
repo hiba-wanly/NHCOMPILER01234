@@ -671,7 +671,6 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         }
         else
         {
-            System.out.println("jjjjjjjjjjjjjjjjlllllllllllll");
             createSymbolRow("const",vv.getVarVaiableid().getNam(),vv.getVarVaiablevalue(),ctx.start.getLine());
 
         }
@@ -2433,6 +2432,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             extclas.setAttr_extends_ClassStateLess_with_float(visitExtends_ClassStateLess_with_float(ctx.extends_ClassStateLess_with_float()));
             extclas.setLinenum(ctx.start.getLine());
             extclas.setChildrennum(ctx.getChildCount());
+            generator.html_code_generation("floating","");
+
 
         }
         if(ctx.extends_ClassStateFull_withState() != null){
@@ -3728,6 +3729,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
             flutterWidget.setFloatactionbutton(visitFloatactionbutton(ctx.floatactionbutton()));
             flutterWidget.setNumline(ctx.start.getLine());
             flutterWidget.setChildrenCount(ctx.getChildCount());
+            generator.html_code_generation("builder","");
         }
         if(ctx.fLOATING_name() != null){
             flutterWidget.setfLOATINGName(visitFLOATING_name(ctx.fLOATING_name()));
@@ -4494,8 +4496,6 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         tet.setDollar(ctx.DOLLAR().toString());
         tet.setId(visitNamen(ctx.namen()));
         createSymbolRow("Text",tet.getId().getNam(),tet.getRules().toString(),ctx.start.getLine());
-        System.out.println("herr****************************************************************"+tet.getId().getNam());
-        System.out.println(tet.getId().getNam()+"PPPPPPPPPPPPPPPP");
         generator.html_code_generation("Text(","$"+tet.getId().getNam());
         //        generator.html_code_generation("Text(","$name");
 //        generator.html_code_generation("Text(","$email");
@@ -4684,6 +4684,10 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         extends_ClassStateLess_with_float.setFLOATINGACTIONBUTTON(ctx.FLOATINGACTIONBUTTON().toString().trim());
         //extends_ClassStateLess_with_float.setType(ctx.TYPE().toString().trim());
         extends_ClassStateLess_with_float.setN(visitNamen(ctx.namen(1)));
+        generator.html_code_generation("ResetEvent","");
+        generator.html_code_generation("IncreamentEvent","");
+
+
 
         return extends_ClassStateLess_with_float;
 
@@ -4752,6 +4756,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         floatbutton.setNumline(ctx.start.getLine());
 
         floatbutton.setChildrenCount(ctx.getChildCount());
+        generator.html_code_generation("ResetEvent","");
 
 
 
@@ -4784,6 +4789,10 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         elseblocbuilder.setLinenum(ctx.start.getLine());
         elseblocbuilder.setChildrennum(ctx.getChildCount());
 
+        generator.html_code_generation("builder", "");
+
+
+
 
 
         return elseblocbuilder ;
@@ -4791,7 +4800,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
 
     @Override
     public blocbuilderWidget visitBlocbuilderWidget(projectParser.BlocbuilderWidgetContext ctx) {
-        System.out.println("visitpressedbutton");
+        System.out.println("visitBlocbuilderWidget");
         blocbuilderWidget blocbuilderWidget = new blocbuilderWidget();
         blocbuilderWidget.setBLOCBUILDER(ctx.BLOCBUILDER().toString().trim());
         blocbuilderWidget.setId(visitNamen(ctx.namen(0)));
@@ -4812,13 +4821,16 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         blocbuilderWidget.setChildrennum(ctx.getChildCount());
         blocbuilderWidget.setELSE(ctx.ELSE().toString().trim());
 
+        generator.html_code_generation("BlocBuilder<CounterBloc, CounterState>","");
+
+
 
         return blocbuilderWidget;
     }
 
     @Override
     public extends_ClassStateFull_withState visitExtends_ClassStateFull_withState(projectParser.Extends_ClassStateFull_withStateContext ctx) {
-     System.out.println("visit extends_ClassStateFull_withState ");
+        System.out.println("visit extends_ClassStateFull_withState ");
         extends_ClassStateFull_withState ee = new extends_ClassStateFull_withState();
         ee.setCLASS(ctx.CLASS().toString().trim());
         ee.setID(visitNamen(ctx.namen(0)));
@@ -4827,6 +4839,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         ee.setN1(visitNamen(ctx.namen(1)));
         ee.setCREAT_STATE(ctx.CREAT_STATE().toString().trim());
         ee.setN2(visitNamen(ctx.namen(2)));
+
+        generator.html_code_generation("state" ,"");
 
         return ee;
 
@@ -4841,6 +4855,8 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         ss.setN(visitNamen(ctx.namen()));
         ss.setPLUSORMINUS(ctx.PLUSORMINUS().toString().trim());
 
+        generator.html_code_generation("incrementcount","");
+
         return ss;
 
     }
@@ -4851,6 +4867,7 @@ public class AntlrToAST extends projectParserBaseVisitor<AST> {
         count cc = new count();
         cc.setN(visitNamen(ctx.namen()));
         cc.setPLUSORMINUS(ctx.PLUSORMINUS().toString().trim());
+        generator.html_code_generation("decrementcount","");
 
         return cc;
     }
