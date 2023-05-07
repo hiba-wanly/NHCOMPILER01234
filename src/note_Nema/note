@@ -1,0 +1,64 @@
+new added in lexer
+///////////////////////////////
+
+NAVIGATE : 'Navigator.of(context).push';
+MATIRIAL_PAGE_ROUTE : 'MaterialPageRoute';
+TextFormField : 'TextFormField';
+Controller : 'controller' ;
+TextEditingController : 'TextEditingController';
+REQUIRED :'required';
+BULDER :'builder : (context) ';
+TEXTT : 'text';
+DOLLAR : '$';
+
+
+/////////////////////////////////
+
+new added in parser
+*****************************
+
+
+
+
+textFormField : HLEFT Controller TOWPOINT namen ;
+constructer : namen HLEFT CURLELEFT (REQUIRED THIS DOT namen COMMA)+  CURLERIGHT HRIGHT;
+textEditingController : TextEditingController namen TextEditingController HLEFT HRIGHT ;
+
+buttonwithPressed : TEXTBUTTON HLEFT CHILD TOWPOINT flutterWidget+   ONPRESSED TOWPOINT HLEFT HRIGHT CURLELEFT  NAVIGATE HLEFT MATIRIAL_PAGE_ROUTE HLEFT BULDER SINGLS namen HLEFT (namen TOWPOINT namen DOT TEXTT COMMA)+ HRIGHT HRIGHT HRIGHT  CURLERIGHT HRIGHT  COMMA
+
+;
+
+text_with_variable : TEXT HLEFT QOUT rule+ DOLLAR namen QOUT HRIGHT COMMA;
+
+buttonwithPressedNavigate : TEXTBUTTON HLEFT CHILD TOWPOINT flutterWidget+  ONPRESSED TOWPOINT HLEFT HRIGHT CURLELEFT  NvigatorPushNamed HLEFT QOUT ID rule QOUT HRIGHT  SEMECOLON CURLERIGHT HRIGHT  COMMA
+
+;
+
+flutterWidget : containerStatement
+              | rowStatement
+              | colStatemenst
+              | texeStatement
+              | sizedBox
+              | textButton
+              | imageState
+              | expandedStatment
+              | paddingStatement
+              | **  textFormField  **
+              | **  buttonwithPressed **
+              | **  buttonwithPressedNavigate **
+              ;
+
+
+
+ inputclass : initial
+            | functionStatement
+            | **  constructer  **
+            | ** textEditingController  **
+            ;
+
+
+texeStatement : text_INPUT_D_Q_N
+              | text_INPUT_D_Q_I
+              | text_rule
+              | ** text_with_variable **
+              ;

@@ -1,0 +1,107 @@
+//CheckForInt//
+class bb{
+int a=0;
+int a=8;
+}
+
+
+
+//CheckForVar//
+class bb{
+var a=0;
+var a=8;
+}
+
+
+
+//CheckForConst//
+class bb{
+const a=0;
+const a=8;
+}
+
+
+
+//CheckDivisionZero//
+class bb{
+int l=1/0;
+}
+
+
+
+
+//CheckForClass//
+class bb{
+int l=1;
+}
+class bb{
+int lk=8;
+}
+
+
+//CheckForFunVoid//
+class bb{
+void aa (){
+int a=0;
+}
+void aa (){
+int ka=0;
+}
+}
+
+
+
+//CheckForFunVoidArg//
+class bb{
+void aa (int k,){
+int a=0;
+}
+void aa (int l,){
+int ka=0;
+}
+}
+
+//CheckForTextEdCont//
+class bb{
+TextEditingController k;
+TextEditingController k;
+}
+
+
+
+////////////////////////////////////
+
+
+
+
+
+class bb{
+int l=1/0;
+}
+
+class bb{
+int l=1;
+int l=5;
+}
+
+class bb{
+const l=1;
+const l=5;
+}
+
+class bb{
+var l=1;
+var l=5;
+}
+
+class bb{
+void aa (){
+int a=0;
+}
+void aa (){
+int ka=0;
+}
+}
+
+
+

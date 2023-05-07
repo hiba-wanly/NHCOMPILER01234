@@ -1,0 +1,38 @@
+class Freecounter extends StatefulWidget {
+
+  @override
+  _FreecounterState createState() => _FreecounterState();
+}
+
+class FreecounterState extends StatelessWidget {
+int count = 0;
+
+void incrementcount(){
+  setState(() {
+    count++;
+  });
+}
+void decrementcount(){
+  count--;
+}
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+          children:[
+           Text("Counter Value: $count"),
+             SizedBox(
+              height: 10.0,
+            ),
+            FloatingActionButton(
+              onPressed: incrementcount,
+              child: Text ("plus"),
+            ),
+            FloatingActionButton(
+              onPressed: decrementcount,
+              child: Text("minus"),
+            ),
+          ]
+        ),
+    )
+ } }

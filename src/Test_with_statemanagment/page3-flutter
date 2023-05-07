@@ -1,0 +1,65 @@
+
+class HomePage extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+
+      body: Column(
+        children:[
+
+          BlocBuilder<CounterBloc, CounterState>(
+            builder: (context, state) {
+              if (state is CounterInitial) {
+                return Text(
+                    "0"
+                ),
+              } else if (state is CounterValueChangedState) {
+              return Text(
+              "changeis"
+              ),
+              } else {
+              return Text(
+              "0"
+              ),
+              }
+            },
+          ),
+        ]
+      ),
+     FloatingActionButton:ButtonsWidget(),
+    )
+  }
+}
+
+
+class ButtonsWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children:[
+          FloatingActionButton(
+            onPressed: () {
+              BlocProvider.of<CounterBloc>(context).add(IncreamentEvent());
+            },
+ child: Text("c"),
+          ),
+
+          FloatingActionButton(
+            onPressed: () {
+              BlocProvider.of<CounterBloc>(context).add(ResetEvent());
+            },
+ child: Text("c"),          ),
+
+          FloatingActionButton(
+            onPressed: () {
+            },
+            child: Text("c"),
+          ),
+        ]
+      ),
+    )
+  }
+}
+

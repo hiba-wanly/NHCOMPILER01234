@@ -1,0 +1,94 @@
+
+
+runapp: VOID  MAIN HLEFT HRIGHT CURLELEFT RUNAPP HRIGHT CONST namen HRIGHT HLEFT HLEFT SEMECOLON CURLERIGHT;
+
+-------------------------------------------------------------------------------------------------
+
+//// LEXER
+ CREATE : 'create' ;
+  MATERIALAPP : 'MaterialApp';
+  HOME : 'home';
+  RUNAPP : 'runApp';
+  MYAPP : 'MyApp';
+  BLOCPROVIDER : 'BlocProvider';
+  OF : 'of';
+  ADD : 'add';
+  FLOATINGACTIONBUTTON :'FloatingActionButton';
+  BLOC : 'Bloc';
+  ON : 'on';
+  EVENT : 'event';
+  EMIT : 'emit';
+  IS : 'is';
+ BLOCBUILDER : 'BlocBuilder';
+ BUILDERCS: 'builder: (context, state)';
+ STATE : 'state';
+
+ *************************************************  nema **********************************
+
+ MainAxisAlignment : 'mainAxisAlignment: MainAxisAlignment.center,';
+ STYLE : ' TextStyle ';
+ FONTSIZE: ' fontSize ';
+-------------------------------------------------------------------------------------------------
+
+ ////edit
+  constructer : ID HLEFT CURLELEFT (REQUIRED THIS DOT namen COMMA)+  CURLERIGHT HRIGHT SEMECOLON;
+-------------------------------------------------------------------------------------------------
+///parser
+
+pressedbutton : BLOCPROVIDER DOT OF SINGLS namen SINGLS HLEFT CONTEXT HRIGHT DOT ADD HLEFT namen HLEFT HRIGHT HRIGHT SEMECOLON;
+--------------------
+floatactionbutton :FLOATINGACTIONBUTTON HLEFT ONPRESSED TOWPOINT HLEFT HRIGHT CURLELEFT pressedbutton* CURLERIGHT COMMA CHILD TOWPOINT flutterWidget+ HRIGHT COMMA;
+---------------------
+elseif_event:ELSEIF HLEFT EVENT IS namen HRIGHT CURLELEFT EMIT HLEFT namen HLEFT namen TOWPOINT namen HRIGHT HRIGHT SEMECOLON CURLERIGHT;
+------------------------
+classbloc : CLASS namen EXTENDS BLOC SINGLS namen COMMA namen SINGLS CURLELEFT inputclass*
+namen HLEFT HRIGHT TOWPOINT SUPER HLEFT namen HLEFT HRIGHT HRIGHT CURLELEFT ON SINGLS namen SINGLS HLEFT HLEFT EVENT COMMA EMIT HRIGHT CURLELEFT
+IF HLEFT EVENT IS namen HRIGHT CURLELEFT EMIT HLEFT namen HLEFT namen TOWPOINT namen HRIGHT HRIGHT SEMECOLON CURLERIGHT
+elseif_event* ELSE CURLELEFT EMIT HLEFT namen HLEFT namen TOWPOINT namen HRIGHT HRIGHT SEMECOLON CURLERIGHT
+ CURLERIGHT HRIGHT SEMECOLON CURLERIGHT CURLERIGHT;
+ -------------------
+returnBlocProvider : RETURN BLOCPROVIDER HLEFT CREATE TOWPOINT HLEFT CONTEXT HRIGHT EQUAL SINGLS
+namen HLEFT HRIGHT COMMA CHILD TOWPOINT CONST MATERIALAPP
+ HLEFT  HOME TOWPOINT namen HLEFT HRIGHT COMMA HRIGHT HRIGHT SEMECOLON;
+---------------------
+elseif_blocbuilder:ELSEIF HLEFT STATE IS namen HRIGHT CURLELEFT RETURN flutterWidget* CURLERIGHT;
+-------------------
+blocbuilderWidget: BLOCBUILDER SINGLS namen COMMA namen SINGLS HLEFT BUILDERCS CURLELEFT
+ IF HLEFT STATE IS namen HRIGHT CURLELEFT RETURN flutterWidget* CURLERIGHT
+ elseif_blocbuilder*
+ ELSE CURLELEFT RETURN flutterWidget* CURLERIGHT CURLERIGHT COMMA HRIGHT COMMA
+;
+-------------
+classblocmain:CLASS namen EXTENDS STATELESSWIDGET CURLELEFT OVERRIDE BUILD_WIDGET CURLELEFT
+                                       returnBlocProvider CURLERIGHT CURLERIGHT
+;
+
+
+/// add(1)
+
+flutterWidget : containerStatement
+              | rowStatement
+              | colStatemenst
+              | texeStatement
+              | sizedBox
+              | textButton
+              | imageState
+              | expandedStatment
+              | paddingStatement
+              | textFormField
+              | buttonwithPressed
+              | buttonwithPressedNavigate
+              | blocbuilderWidget
+              |floatactionbutton
+              ;
+
+//// add(2)
+
+ /// add(3)
+
+classS : classstatement
+      | abstractstatment
+      | extendsClass
+      | classbloc
+      |classblocmain
+      ;

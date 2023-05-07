@@ -1,0 +1,17 @@
+
+
+class CounterBloc extends Bloc<CounterEvent, CounterState> {
+  int counter = 0;
+  CounterBloc() : super(CounterInitial()) {
+    on<CounterEvent>((event, emit) {
+      if (event is IncreamentEvent) {
+        emit(CounterValueChangedState(counter: counter));
+      }
+      else if (event is DecreamentEvent) {
+        emit(CounterValueChangedState(counter: counter));
+      } else {
+        emit(CounterValueChangedState(counter: counter));
+      }
+    });
+  }
+}

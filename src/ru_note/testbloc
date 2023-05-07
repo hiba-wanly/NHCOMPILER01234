@@ -1,0 +1,73 @@
+class nan extends StatelessWidget {
+
+  TextEditingController name ;
+  TextEditingController email ;
+  TextEditingController age ;
+  TextEditingController phone ;
+
+  @override
+  Widget build(BuildContext context){
+    return Scaffold (
+    BlocBuilder<fff , fff>(
+    builder: (context, state){
+    if(state is nam){
+    return text("fff");}
+    else {
+    return appBar : AppBar(
+                title : Text(" Compiler Test "),
+                          backgroundColor : Colors.red,
+                       ),
+                 body : Column(
+                     children :[
+                         Padding( padding : const EdgeInsets.all(12.0),
+                         child: Row (
+                           children :[
+                               Expanded(
+                               child: Column(
+                                   children: [
+                                       Column(children: [
+                                       Text("Enter name"), ]),
+                                        SizedBox(height: 8.0,),
+                                       TextFormField(
+                                         controller: name,
+                                       ),
+                                       SizedBox(height: 8.0,),
+                                       Text("Enter email"),
+                                       SizedBox(height: 8.0,),
+                                       TextFormField(
+                                         controller: email,
+                                       ),
+                                       SizedBox(height: 8.0,),
+                                       Text("Enter age"),
+                                       SizedBox(height: 8.0,),
+                                       TextFormField(
+                                         controller: age,
+                                       ),
+                                       SizedBox(height: 8.0,),
+                                       Text("Enter phone"),
+                                       SizedBox(height: 8.0,),
+                                       TextFormField(
+                                         controller: phone,
+                                       ),
+                                       SizedBox(height: 8.0,),
+                                        TextButton(
+                                           child: Text("go"),
+                                           onPressed: (){
+                                             Navigator.of(context).push(MaterialPageRoute(
+                                                 builder : (context) => page(
+                                                   name: name.text,
+                                                   email: email.text,
+                                                   age: age.text,
+                                                   phone: phone.text,
+                                                 )
+                                             )
+                                             )
+                                           }),
+                           ]),
+                         ),
+                    ]), ),
+
+                    ]),);
+           }
+           }
+

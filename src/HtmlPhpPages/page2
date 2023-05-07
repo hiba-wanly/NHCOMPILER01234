@@ -1,0 +1,33 @@
+<html>
+    <body>
+           <header>
+               <h1 style="color: white"> Compiler Test page 2 </h1>
+
+       </header>
+       <head>
+           <style>
+               header {
+           background-color: red;
+            }
+               .Form{
+                   text-align: center;
+               }
+
+           </style>
+       </head>
+
+
+
+       <div>
+      <form action = "page3.php" method="post">
+      <p> Hello <?php echo $_POST["name"];?> ! </p> <br/>
+      <p> Name : <?php echo $_POST["name"];?> ! <p> <br/>
+      <p> Your Email : <?php echo $_POST["email"];?> </p> <br/>
+      <p> Age : <?php echo $_POST["age"];?> </p> <br/>
+      <p> Phone number : <?php echo $_POST["phone"];?> </p> <br/>
+
+       <input type="submit" value="submit" name = "It's True .. Get Started">
+       </form>
+       </div>
+    </body>
+</html>

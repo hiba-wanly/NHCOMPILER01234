@@ -1,0 +1,40 @@
+class page extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Compiler Test"),
+        backgroundColor: Colors.red,
+      ),
+        body : Column (
+            children :[
+              Padding( padding : const EdgeInsets.all(12.0),
+                  child: Row (
+                   children :[
+                     Expanded(
+                       child: Column(
+                       children: [
+                         Text("Hello : $name"),
+                         SizedBox(height: 10.0,),
+                         Text("Your Email : $email"),
+                         SizedBox(height: 10.0,),
+                         Text("Age : $age"),
+                         SizedBox(height: 10.0,),
+                         Text("phone : $phone"),
+                         SizedBox(height: 10.0,),
+                         TextButton(
+                           child: Text("Its True Get Started"),
+                           onPressed: () {
+                             Navigator.of(context).pushNamed("page3");
+                           }
+                         ),
+
+                   ]
+                 ),
+
+        ),]
+        ),
+    ),]),)
+ } }
